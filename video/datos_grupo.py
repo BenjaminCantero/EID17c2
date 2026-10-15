@@ -23,7 +23,7 @@ HABLA = {
 }
 
 FUENTES = [
-    "Apunte del curso MAT1188 – Cálculo Intermedio (sección: Teorema Fundamental del Cálculo).",
+    "Apunte «Introducción a la integral», MAT1188 – Cálculo Intermedio (Teorema Fundamental del Cálculo).",
     "Stewart, J. (2018). Cálculo de una variable: trascendentes tempranas (8.ª ed.). Cengage. Sección 5.3.",
     "Thomas, G. B. (2015). Cálculo. Una variable (13.ª ed.). Pearson. Sección 5.4.",
     "Manim Community v0.22.0 — docs.manim.community (licencia MIT).",

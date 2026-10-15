@@ -2,7 +2,7 @@
 # Renderiza todas las escenas y las une en un solo video.
 #
 # Uso:
-#   ./render.sh          calidad alta (1080p60)  → video_final.mp4
+#   ./render.sh          calidad alta (1080p60)  → MAT1188_EID_G17_2026.mp4
 #   ./render.sh l        calidad baja (480p15), para revisar rápido
 #   ./render.sh m|h|k    media (720p30), alta (1080p60), 4K (2160p60)
 #
@@ -18,7 +18,7 @@ if [[ -z "${MANIM:-}" && -x .venv/bin/manim ]]; then
     MANIM=".venv/bin/manim"
 fi
 MANIM="${MANIM:-manim}"
-SALIDA="video_final.mp4"
+SALIDA="MAT1188_EID_G17_2026.mp4"
 
 case "$CALIDAD" in
     l) CARPETA="480p15" ;;

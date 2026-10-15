@@ -3,7 +3,15 @@
 Proyecto EID de **MAT1188 – Cálculo Intermedio**, Grupo 17.
 Video hecho con [Manim Community v0.22.0](https://docs.manim.community).
 
-**Integrantes:** Benjamin Cantero, Ricardo Garces y Juan Pablo Valdevenito.
+**Tema:** función de acumulación y Teorema Fundamental del Cálculo (parte 1).
+
+| Integrante | Cuenta GitHub | Rol principal |
+|---|---|---|
+| Benjamin Cantero | [@BenjaminCantero](https://github.com/BenjaminCantero) | _completar_ |
+| Ricardo Garces | _completar_ | _completar_ |
+| Juan Pablo Valdevenito | _completar_ | _completar_ |
+
+Los roles a repartir son: matemática y explicación; visualización y código; revisión e integración del video.
 
 ## Pregunta central
 
@@ -47,12 +55,23 @@ Duración total: **5 min 38 s**.
 
 ## Cómo generar el video
 
-Requisitos: Python 3, LaTeX y ffmpeg.
+### Versiones y dependencias
+
+| Herramienta | Versión usada |
+|---|---|
+| Python | 3.14.7 |
+| Manim Community | 0.22.0 (`requirements.txt`) |
+| LaTeX | TeX Live (para `MathTex` y `MathTable`) |
+| ffmpeg | 9.0 (Manim lo usa para generar los videos; `render.sh`, para unir las escenas) |
+
+En Linux también se necesitan las bibliotecas de sistema `cairo` y `pango`. Ver la [guía de instalación de Manim](https://docs.manim.community/en/stable/installation.html).
+
+### Pasos
 
 ```bash
 python -m venv .venv
 .venv/bin/pip install -r requirements.txt
-./render.sh          # 1080p60 → video_final.mp4
+./render.sh          # 1080p60 → MAT1188_EID_G17_2026.mp4
 ./render.sh l        # 480p15, para revisar rápido
 ```
 
@@ -72,7 +91,7 @@ python -m unittest
 
 ```
 escenas.py                     punto de entrada de manim (registra las 7 escenas)
-render.sh                      renderiza todo y une las escenas en video_final.mp4
+render.sh                      renderiza todo y une las escenas en MAT1188_EID_G17_2026.mp4
 video/
   datos_grupo.py               nombres, quién narra cada escena, fuentes y declaración de IA
   dominio/                     matemática pura, sin manim
@@ -98,14 +117,28 @@ tests/test_dominio.py          comprueba A' = f, los valores de A y el reparto d
 
 ## Fuentes
 
-- Apunte del curso MAT1188 – Cálculo Intermedio, sección Teorema Fundamental del Cálculo.
-- Stewart, J. (2018). *Cálculo de una variable: trascendentes tempranas* (8.ª ed.). Cengage. Sección 5.3.
-- Thomas, G. B. (2015). *Cálculo. Una variable* (13.ª ed.). Pearson. Sección 5.4.
-- Manim Community v0.22.0, <https://docs.manim.community>, licencia MIT.
+- _Autor/institución_ (_año_). *Introducción a la integral* [Apunte del curso MAT1188 – Cálculo Intermedio]. _Enlace a Blackboard_. Usado para la definición de A(x) y el TFC.
+- Stewart, J. (2018). *Cálculo de una variable: trascendentes tempranas* (8.ª ed.). Cengage Learning. Sección 5.3, «El Teorema Fundamental del Cálculo». <https://www.cengage.com>
+- Thomas, G. B., Weir, M. D. y Hass, J. (2015). *Cálculo. Una variable* (13.ª ed.). Pearson Educación. Sección 5.4. <https://www.pearson.com>
+- The Manim Community Developers (consultado en 2026). *Manim Community v0.22.0, documentación oficial*. Licencia MIT. <https://docs.manim.community>
 
 No se usaron imágenes, música ni código de terceros aparte de Manim. Todas las animaciones son propias.
 
 ## Uso de IA
 
-Se usó Claude (Anthropic) como apoyo para el borrador y la organización del código.
-El grupo revisó y verificó a mano todos los cálculos, y revisó cada escena del video.
+- **Herramienta:** Claude (Anthropic), mediante Claude Code.
+- **Finalidad:** apoyo en la programación de las escenas de Manim y en la organización del repositorio.
+- **Partes apoyadas:**
+  - borrador del código de las escenas;
+  - separación del código en las carpetas `dominio/` y `presentacion/`;
+  - script `render.sh`;
+  - tests;
+  - borrador de este README.
+- **Partes no apoyadas:** la elección del tema, del ejemplo y del contraejemplo, y la narración del video.
+- **Verificación:**
+  - Calculamos a mano A(x), A'(x), los ceros de f, A(−1) = 7/3, A(3) = −25/3 y f(−1,6) = 2,76.
+  - Comparamos esos valores con lo que muestra el video.
+  - `python -m unittest` comprueba numéricamente que A' = f.
+  - Revisamos cada escena renderizada.
+
+La IA no reemplazó las fuentes: la teoría proviene del apunte y de los libros citados.
