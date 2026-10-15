@@ -76,6 +76,20 @@ class DosGraficas(EscenaNarrada):
         return ax_f, ax_A
 
     def mostrar_graficas(self, ax_f, ax_A):
+        etiquetas = VGroup(
+            MathTex("f(t)", font_size=22, color=COLOR_F).next_to(
+                ax_f.y_axis, UP, buff=0.08
+            ).shift(RIGHT * 0.55),
+            MathTex("t", font_size=22, color=COLOR_X).next_to(
+                ax_f.x_axis, RIGHT, buff=0.08
+            ),
+            MathTex("A(x)", font_size=22, color=COLOR_A).next_to(
+                ax_A.y_axis, UP, buff=0.08
+            ).shift(RIGHT * 0.55),
+            MathTex("x", font_size=22, color=COLOR_X).next_to(
+                ax_A.x_axis, RIGHT, buff=0.08
+            ),
+        )
         nombre_f = MathTex(r"y = f(t) = t^2-2t-3", font_size=30, color=COLOR_F)
         nombre_f.next_to(ax_f, UP, buff=0.05).align_to(ax_f, LEFT).shift(RIGHT * 0.3)
         nombre_A = MathTex(r"y = A(x) = \int_{-2}^{x} f(t)\,dt", font_size=30, color=COLOR_A)
@@ -87,7 +101,7 @@ class DosGraficas(EscenaNarrada):
             num_dashes=60,
         )
 
-        self.play(Create(ax_f), Create(ax_A), run_time=1.5)
+        self.play(Create(ax_f), Create(ax_A), FadeIn(etiquetas), run_time=1.5)
         self.play(Create(graf_f), Write(nombre_f), run_time=2)
         self.play(Write(nombre_A))
         self.wait(5)

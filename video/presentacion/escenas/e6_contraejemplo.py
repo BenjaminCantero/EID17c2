@@ -4,7 +4,7 @@ from manim import *
 
 from ...dominio.ejemplos import G, g
 from ..componentes import EscenaNarrada
-from ..estilo import COLOR_A, COLOR_CERO, COLOR_F, color_por_signo, texto
+from ..estilo import COLOR_A, COLOR_CERO, COLOR_F, COLOR_X, color_por_signo, texto
 
 
 class Contraejemplo(EscenaNarrada):
@@ -26,11 +26,25 @@ class Contraejemplo(EscenaNarrada):
         ax1 = Axes(y_range=[-0.5, 2.6, 1], **cfg)
         ax2 = Axes(y_range=[-1.4, 1.4, 1], **cfg)
         VGroup(ax1, ax2).arrange(RIGHT, buff=1.0).shift(DOWN * 0.3)
+        etiquetas = VGroup(
+            MathTex("f(t)", font_size=22, color=COLOR_F).next_to(
+                ax1.y_axis, LEFT, buff=0.08
+            ),
+            MathTex("t", font_size=22, color=COLOR_X).next_to(
+                ax1.x_axis, RIGHT, buff=0.08
+            ),
+            MathTex("A(x)", font_size=22, color=COLOR_A).next_to(
+                ax2.y_axis, LEFT, buff=0.08
+            ),
+            MathTex("x", font_size=22, color=COLOR_X).next_to(
+                ax2.x_axis, RIGHT, buff=0.08
+            ),
+        )
         n1 = MathTex(r"f(t)=t^2", color=COLOR_F, font_size=34).next_to(ax1, UP, buff=0.1)
         n2 = MathTex(r"A(x)=\int_0^x t^2\,dt=\frac{x^3}{3}", color=COLOR_A, font_size=34).next_to(ax2, UP, buff=0.1)
         p1 = ax1.plot(g, x_range=[-1.5, 1.5], color=COLOR_F, stroke_width=4)
         p2 = ax2.plot(G, x_range=[-1.5, 1.5], color=COLOR_A, stroke_width=4)
-        self.play(Create(ax1), Create(ax2), Write(n1), Write(n2))
+        self.play(Create(ax1), Create(ax2), FadeIn(etiquetas), Write(n1), Write(n2))
         self.play(Create(p1), Create(p2), run_time=2)
         return ax1, ax2
 
