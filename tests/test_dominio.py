@@ -2,6 +2,7 @@
 
 import unittest
 
+from video.datos_grupo import HABLA, NOMBRES
 from video.dominio.ejemplos import A, A_INICIO, EXTREMOS, G, TRAMOS, X_FIN, f, g
 from video.dominio.signo import Signo, clasificar_signo, pendiente_numerica
 
@@ -40,6 +41,17 @@ class TestContraejemplo(unittest.TestCase):
     def test_pendiente_de_G_es_g(self):
         for x in rango(-1.5, 1.5):
             self.assertAlmostEqual(pendiente_numerica(G, x), g(x), places=6)
+
+
+class TestDatosGrupo(unittest.TestCase):
+    """Rúbrica V6b: todos los integrantes deben narrar alguna escena."""
+
+    def test_indices_de_narradores_validos(self):
+        for escena, indice in HABLA.items():
+            self.assertIn(indice, range(len(NOMBRES)), f"HABLA['{escena}'] fuera de rango")
+
+    def test_todos_narran(self):
+        self.assertEqual(set(HABLA.values()), set(range(len(NOMBRES))))
 
 
 class TestClasificarSigno(unittest.TestCase):
