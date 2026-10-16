@@ -39,4 +39,6 @@ class EscenaNarrada(Scene):
         self.add(etiqueta_hablante(self.hablante), etiqueta_escena(self.hablante))
 
     def limpiar(self):
+        for mob in self.mobjects:
+            mob.clear_updaters()
         self.play(FadeOut(Group(*self.mobjects)))
