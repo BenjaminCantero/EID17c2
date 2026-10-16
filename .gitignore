@@ -1,4 +1,27 @@
+# Manim
 media/
-MAT1188_EID_G17_2026.mp4
-__pycache__/
+*.mp4
+*.gif
+*.webm
+partial_movie_files/
+
+# Entorno virtual
 .venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Archivos temporales / OS
+*.log
+.DS_Store
+Thumbs.db
+*.txt
