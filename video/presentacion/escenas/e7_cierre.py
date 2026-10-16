@@ -14,6 +14,7 @@ class Cierre(EscenaNarrada):
         self.mostrar_hablante()
         self.mostrar_respuesta()
         self.limpiar()
+        self.mostrar_hablante()
         self.mostrar_creditos()
         self.limpiar()
 
