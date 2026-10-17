@@ -4,7 +4,7 @@ poner los nombres reales, cambiar quién narra o actualizar las fuentes."""
 NOMBRES = [
     "Benjamin Cantero",
     "Ricardo Garces",
-    "Juan Pablo Valdevenito",
+    "Juan Pablo Valdebenito",
 ]
 CURSO = "MAT1188 – Cálculo Intermedio"
 GRUPO = "Grupo 17"

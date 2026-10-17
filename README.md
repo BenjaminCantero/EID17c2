@@ -9,7 +9,7 @@ Video hecho con [Manim Community v0.22.0](https://docs.manim.community).
 |---|---|---|
 | Benjamin Cantero | [@BenjaminCantero](https://github.com/BenjaminCantero) | _completar_ |
 | Ricardo Garces | [@RicardoAndrees](https://github.com/RicardoAndrees)
-| Juan Pablo Valdevenito | _completar_ | _completar_ |
+| Juan Pablo Valdebenito | _completar_ | _completar_ |
 
 Los roles a repartir son: matemática y explicación; visualización y código; revisión e integración del video.
 
