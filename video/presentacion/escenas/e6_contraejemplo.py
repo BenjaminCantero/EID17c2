@@ -71,4 +71,4 @@ class Contraejemplo(EscenaNarrada):
             texto("f no cambia de signo, así que no hay máximo ni mínimo.", 26, color=COLOR_CERO),
         ).arrange(DOWN, buff=0.15).to_edge(DOWN, buff=0.7)
         self.play(FadeIn(conclusion))
-        self.wait(10)
+        self.wait(5)
