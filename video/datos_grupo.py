@@ -31,9 +31,9 @@ AUDIOS = {
 }
 
 FUENTES = [
-    "Apunte «Introducción a la integral», MAT1188 – Cálculo Intermedio (Teorema Fundamental del Cálculo).",
+    "Universidad Católica de Temuco (2026). Introducción a la integral. Apunte MAT1188.",
     "Stewart, J. (2018). Cálculo de una variable: trascendentes tempranas (8.ª ed.). Cengage. Sección 5.3.",
-    "Thomas, G. B. (2015). Cálculo. Una variable (13.ª ed.). Pearson. Sección 5.4.",
+    "Thomas, G. B., Weir, M. D. y Hass, J. (2015). Cálculo. Una variable (13.ª ed.). Pearson. Secc. 5.4.",
     "Manim Community v0.22.0 — docs.manim.community (licencia MIT).",
 ]
 DECLARACION_IA = [

@@ -117,7 +117,7 @@ tests/test_dominio.py          comprueba A' = f, los valores de A y el reparto d
 
 ## Fuentes
 
-- _Autor/institución_ (_año_). *Introducción a la integral* [Apunte del curso MAT1188 – Cálculo Intermedio]. _Enlace a Blackboard_. Usado para la definición de A(x) y el TFC.
+- Universidad Católica de Temuco (2026). *Introducción a la integral* [Apunte del curso MAT1188 – Cálculo Intermedio]. Disponible en el Blackboard del curso. Usado para la definición de A(x) y el TFC.
 - Stewart, J. (2018). *Cálculo de una variable: trascendentes tempranas* (8.ª ed.). Cengage Learning. Sección 5.3, «El Teorema Fundamental del Cálculo». <https://www.cengage.com>
 - Thomas, G. B., Weir, M. D. y Hass, J. (2015). *Cálculo. Una variable* (13.ª ed.). Pearson Educación. Sección 5.4. <https://www.pearson.com>
 - The Manim Community Developers (consultado en 2026). *Manim Community v0.22.0, documentación oficial*. Licencia MIT. <https://docs.manim.community>
