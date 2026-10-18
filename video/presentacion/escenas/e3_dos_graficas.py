@@ -1,6 +1,4 @@
-"""ESCENA 3 — Las dos gráficas, sincronizadas                (~95 s)
-
-Esta es la escena central del proyecto."""
+"""Escena 3: las dos gráficas, sincronizadas."""
 
 from manim import *
 
@@ -20,7 +18,7 @@ from ..estilo import (
 
 Y_MIN_A, Y_MAX_A = -9.5, 3.5  # rango vertical de los ejes de A
 
-Y_MAX_F = 6                   # tope vertical de los ejes de f
+Y_MAX_F = 6
 
 MEDIO_ANCHO = 0.7             # mitad del largo de la tangente, en unidades de x
 
@@ -48,10 +46,9 @@ class DosGraficas(EscenaNarrada):
 
         graf_f, guia_A = self.mostrar_graficas(ax_f, ax_A)
 
-        # Pausa adicional
         self.wait(2)
 
-        # El parámetro que mueve todo: x
+        # Al animar x se mueven a la vez área, curva de A, tangente y panel.
 
         x_t = ValueTracker(A_INICIO + 0.001)
 
@@ -73,7 +70,6 @@ class DosGraficas(EscenaNarrada):
 
         self.wait(4)
 
-        # Pausa adicional: panel completo antes de comenzar el área verde.
         self.wait(2)
 
         self.recorrer(x_t, ax_f, ax_A)
@@ -86,9 +82,9 @@ class DosGraficas(EscenaNarrada):
 
         self.limpiar()
 
-    # ---------- Ejes: arriba f, abajo A, con la MISMA escala horizontal ----------
-
     def crear_ejes(self):
+
+        # f arriba y A abajo, con la misma escala horizontal.
 
         comunes = dict(
 
@@ -190,13 +186,9 @@ class DosGraficas(EscenaNarrada):
 
         return graf_f, guia_A
 
-    # ---------- Objetos que siguen a x ----------
-
     def crear_dinamicos(self, ax_f, ax_A, graf_f, x):
 
         """Devuelve [área, vertical, curva de A, punto en f, punto en A]."""
-
-        # Área acumulada bajo f: verde donde f>0, roja donde f<0
 
         def dibujar_area():
 
@@ -216,8 +208,6 @@ class DosGraficas(EscenaNarrada):
 
         area = always_redraw(dibujar_area)
 
-        # Curva de A que se va dibujando hasta x
-
         curva_A = always_redraw(
 
             lambda: ax_A.plot(A, x_range=[A_INICIO, max(x(), A_INICIO + 0.01)],
@@ -225,8 +215,6 @@ class DosGraficas(EscenaNarrada):
                               color=COLOR_A, stroke_width=5)
 
         )
-
-        # Línea vertical que une el mismo x en ambas gráficas
 
         vertical = always_redraw(
 
@@ -246,8 +234,6 @@ class DosGraficas(EscenaNarrada):
 
     def dibujar_tangente(ax_A, xv):
 
-        """Recta tangente a A en x. Su pendiente es f(x)."""
-
         m = f(xv)
 
         p1 = ax_A.c2p(xv - MEDIO_ANCHO, A(xv) - m * MEDIO_ANCHO)
@@ -255,8 +241,6 @@ class DosGraficas(EscenaNarrada):
         p2 = ax_A.c2p(xv + MEDIO_ANCHO, A(xv) + m * MEDIO_ANCHO)
 
         return Line(p1, p2, color=color_por_signo(m), stroke_width=5)
-
-    # ---------- Panel de lectura a la derecha ----------
 
     def crear_panel(self, x):
 
@@ -336,21 +320,13 @@ class DosGraficas(EscenaNarrada):
 
         return bloque.to_edge(RIGHT, buff=0.3)
 
-    # ---------- Animación ----------
-
     def recorrer(self, x_t, ax_f, ax_A):
 
         maximo, minimo = EXTREMOS
 
-        # Tramo 1: f > 0, A crece
-
         self.play(x_t.animate.set_value(maximo.x), run_time=7, rate_func=linear)
 
-        # Pausa en x = −1: f = 0, tangente horizontal, máximo local
-
         self.pausar_en_extremo(maximo, ax_f, ax_A)
-
-        # Tramo 2: f < 0, A decrece
 
         self.play(x_t.animate.set_value(1), run_time=7, rate_func=linear)
 
@@ -358,11 +334,7 @@ class DosGraficas(EscenaNarrada):
 
         self.play(x_t.animate.set_value(minimo.x), run_time=7, rate_func=linear)
 
-        # Pausa en x = 3: f = 0, tangente horizontal, mínimo local
-
         self.pausar_en_extremo(minimo, ax_f, ax_A)
-
-        # Tramo 3: f > 0 otra vez, A vuelve a crecer
 
         self.play(x_t.animate.set_value(X_FIN), run_time=5, rate_func=linear)
 
@@ -384,8 +356,6 @@ class DosGraficas(EscenaNarrada):
 
     def notar_bajada_rapida(self, ax_f):
 
-        """En x = 1 f alcanza su valor más negativo: A baja con la mayor rapidez."""
-
         nota_txt = VGroup(
 
             texto("f(1) = −4 es el valor más negativo:", 20, color=COLOR_NEG),
@@ -405,8 +375,6 @@ class DosGraficas(EscenaNarrada):
         self.wait(6)
 
         self.play(FadeOut(nota))
-
-    # ---------- Resumen sobre la gráfica de A ----------
 
     def mostrar_resumen(self, ax_A):
 

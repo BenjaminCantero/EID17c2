@@ -1,4 +1,4 @@
-"""ESCENA 1 — Portada y pregunta central                     (~25 s)"""
+"""Escena 1: Portada y pregunta central."""
 
 from manim import *
 
@@ -28,9 +28,9 @@ class Portada(EscenaNarrada):
         self.play(Write(titulo), run_time=1.5)
         self.play(FadeIn(sub, shift=UP * 0.2), FadeIn(integrantes, shift=UP * 0.2))
         self.mostrar_hablante()
-        self.wait(3)
+        self.wait(8.5)
         self.play(FadeIn(pregunta, shift=UP * 0.3), run_time=1.5)
-        self.wait(5)
+        self.wait(9)
         self.play(Write(formula))
-        self.wait(7)
+        self.wait(6)
         self.limpiar()

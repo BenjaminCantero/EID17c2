@@ -1,1 +1,1 @@
-"""Capa de presentación: todo lo que depende de manim."""
+"""Todo lo que depende de manim."""

@@ -1,29 +1,5 @@
-"""
-MAT1188 Cálculo Intermedio — Proyecto Manim (EID)
-Grupo 17: «La pendiente de la acumulación»
-
-Pregunta central:
-    ¿Cómo se relaciona el valor de f(x) con la pendiente de la función
-    de acumulación A(x) = ∫_a^x f(t) dt ?
-
-Punto de entrada para manim. El código vive en el paquete `video/`:
-    video/datos_grupo.py          nombres, narradores, fuentes (EDITAR AQUÍ)
-    video/dominio/                matemática pura (f, A, signos), sin manim
-    video/presentacion/estilo.py  colores y tipografía
-    video/presentacion/escenas/   una escena por archivo
-
-Manim solo detecta escenas definidas en este archivo, por eso cada una se
-registra abajo como subclase de una línea.
-
-Renderizar todo (ver render.sh):
-    manim -qh escenas.py Escena1_Portada Escena2_Definicion ...
-Vista rápida de una escena en baja calidad:
-    manim -pql escenas.py Escena3_DosGraficas
-Tests del dominio (no requieren manim):
-    python -m unittest
-
-Versión probada: Manim Community v0.22.0
-"""
+"""Punto de entrada de manim. Manim solo detecta escenas definidas en este
+archivo, por eso cada una se registra abajo como subclase de una línea."""
 
 from video.presentacion.escenas.e1_portada import Portada
 from video.presentacion.escenas.e2_definicion import Definicion

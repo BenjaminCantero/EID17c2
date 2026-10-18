@@ -1,6 +1,7 @@
 # Manim
 media/
 *.mp4
+!audios/*.mp4
 *.gif
 *.webm
 partial_movie_files/

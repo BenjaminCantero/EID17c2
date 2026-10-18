@@ -1,4 +1,4 @@
-"""ESCENA 7 — Respuesta a la pregunta central, fuentes e IA   (~55 s)"""
+"""Escena 7: Respuesta a la pregunta central, fuentes e IA."""
 
 from manim import *
 
@@ -26,12 +26,12 @@ class Cierre(EscenaNarrada):
         caja = SurroundingRectangle(clave, color=COLOR_X, buff=0.2)
         VGroup(clave, caja).next_to(titulo, DOWN, buff=0.35)
         self.play(Write(clave), Create(caja))
-        self.wait(3)
+        self.wait(2)
 
         frase = texto("El valor de f(x) ES la pendiente de A en x.", 32)
         frase.next_to(caja, DOWN, buff=0.35)
         self.play(FadeIn(frase))
-        self.wait(3)
+        self.wait(0.5)
 
         casos = VGroup(
             texto("f(x) > 0   ⇒   A crece", 30, color=COLOR_POS),
@@ -39,19 +39,19 @@ class Cierre(EscenaNarrada):
             texto("f(x) = 0   ⇒   tangente horizontal (extremo si f cambia de signo)", 30, color=COLOR_CERO),
             texto("|f(x)| grande   ⇒   A cambia más rápido", 30, color=GRAY_A),
         ).arrange(DOWN, aligned_edge=LEFT, buff=0.22).next_to(frase, DOWN, buff=0.35)
-        for c in casos:
+        # Esperas ajustadas para que cada caso aparezca cuando se nombra.
+        for c, espera in zip(casos, [1.5, 2, 3, 4]):
             self.play(FadeIn(c, shift=RIGHT * 0.2))
-            self.wait(3.5)
+            self.wait(espera)
 
         cierre = texto(
             "Integrar y derivar son procesos inversos: Teorema Fundamental del Cálculo.",
             24, color=COLOR_X,
         ).next_to(casos, DOWN, buff=0.4)
         self.play(FadeIn(cierre))
-        self.wait(6)
+        self.wait(5)
 
     def mostrar_creditos(self):
-        """Fuentes y declaración de IA (rúbrica V7)."""
         t2 = texto("Fuentes y recursos", 36, weight=BOLD).to_edge(UP)
         lista = VGroup(*[texto("• " + s, 20) for s in FUENTES]).arrange(DOWN, aligned_edge=LEFT, buff=0.25)
         ia = VGroup(*[texto(s, 20, color=GRAY_A) for s in DECLARACION_IA]).arrange(DOWN, aligned_edge=LEFT, buff=0.12)
@@ -60,4 +60,4 @@ class Cierre(EscenaNarrada):
         if bloque.width > 13:
             bloque.scale_to_fit_width(13)
         self.play(FadeIn(t2), FadeIn(bloque))
-        self.wait(7)
+        self.wait(10)

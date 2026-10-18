@@ -1,4 +1,4 @@
-"""ESCENA 4 — ¿Por qué A'(x) = f(x)? La franja delgada        (~60 s)"""
+"""Escena 4: ¿Por qué A'(x) = f(x)? La franja delgada."""
 
 from manim import *
 
@@ -6,7 +6,7 @@ from ...dominio.ejemplos import A, f
 from ..componentes import EscenaNarrada
 from ..estilo import COLOR_A, COLOR_F, COLOR_POS, COLOR_X, texto
 
-X0 = -1.6  # punto donde estudiamos la pendiente
+X0 = -1.6
 
 EXPLICACIONES = [
     "El área nueva al avanzar de x a x+h es la franja verde.",
@@ -31,7 +31,7 @@ class Franja(EscenaNarrada):
         titulo = texto("¿Por qué la pendiente de A es f(x)?", 38, weight=BOLD).to_edge(UP)
         self.play(Write(titulo))
 
-        h_t = ValueTracker(0.5)  # ancho de la franja
+        h_t = ValueTracker(0.5)  # ancho h de la franja
         self.mostrar_franja(h_t)
         pasos, nota = self.mostrar_razonamiento()
         self.mostrar_convergencia(h_t, pasos, nota)
@@ -92,7 +92,6 @@ class Franja(EscenaNarrada):
         return pasos, nota
 
     def mostrar_convergencia(self, h_t, pasos, nota):
-        """Lectura numérica del cociente incremental que converge a f(x)."""
         lbl_h = MathTex("h =", font_size=34, color=COLOR_X)
         val_h = DecimalNumber(0.5, num_decimal_places=3, font_size=34, color=COLOR_X)
         lbl_c = MathTex(r"\frac{A(x+h)-A(x)}{h} =", font_size=30)

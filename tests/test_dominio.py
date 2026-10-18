@@ -44,8 +44,6 @@ class TestContraejemplo(unittest.TestCase):
 
 
 class TestDatosGrupo(unittest.TestCase):
-    """Rúbrica V6b: todos los integrantes deben narrar alguna escena."""
-
     def test_indices_de_narradores_validos(self):
         for escena, indice in HABLA.items():
             self.assertIn(indice, range(len(NOMBRES)), f"HABLA['{escena}'] fuera de rango")

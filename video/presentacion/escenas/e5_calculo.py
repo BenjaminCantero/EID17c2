@@ -1,5 +1,4 @@
-
-"""ESCENA 5 — Cálculo explícito y tabla de signos (~60 s)."""
+"""Escena 5: cálculo explícito y tabla de signos."""
 
 from manim import *
 
@@ -7,8 +6,7 @@ from ..componentes import EscenaNarrada
 from ..estilo import COLOR_A, COLOR_CERO, COLOR_NEG, COLOR_POS, COLOR_X, texto
 
 
-# Color de cada columna de la tabla de signos.
-# El índice 1 corresponde a las etiquetas de las filas.
+# (columna, color) de la tabla de signos; la columna 1 son las etiquetas.
 COLORES_COLUMNAS = [
     (2, COLOR_POS),
     (3, COLOR_CERO),

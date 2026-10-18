@@ -1,4 +1,4 @@
-"""ESCENA 2 — Definición, símbolos y teorema                 (~55 s)"""
+"""Escena 2: Definición, símbolos y teorema."""
 
 from manim import *
 
@@ -21,7 +21,7 @@ class Definicion(EscenaNarrada):
         self.limpiar()
 
     def mostrar_formula(self, titulo):
-        # Cada trozo de la fórmula es un objeto separado para poder señalarlo.
+        # Fórmula en trozos para poder resaltar cada símbolo por índice.
         formula = MathTex(
             "A(", "x", ")", "=", r"\int_{", "a", "}^{", "x", "}", "f(", "t", r")\,d", "t",
             font_size=72,
@@ -57,7 +57,6 @@ class Definicion(EscenaNarrada):
         self.play(FadeOut(explicaciones), FadeOut(interpretacion))
 
     def mostrar_teorema(self, formula):
-        """Teorema Fundamental del Cálculo (parte 1)."""
         tfc_titulo = texto("Teorema Fundamental del Cálculo (parte 1)", 32, color=COLOR_X)
         hipotesis = texto("Si f es continua en un intervalo que contiene a a y a x, entonces", 28)
         conclusion = MathTex(r"A'(x) = f(x)", font_size=64, color=COLOR_A)
