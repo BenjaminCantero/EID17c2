@@ -41,17 +41,17 @@ Contraejemplo: con f(t) = t² y A(x) = x³/3, se cumple f(0) = 0, pero A no tien
 
 ## Escenas
 
-| Escena | Contenido | Narra | Duración aprox. |
+| Escena | Contenido | Narra | Duración |
 |---|---|---|---|
-| 1. Portada | Título, integrantes y pregunta central | Benjamin | 25 s |
+| 1. Portada | Título, integrantes y pregunta central | Benjamin | 30 s |
 | 2. Definición | Definición de A, significado de cada símbolo, hipótesis y enunciado del TFC | Benjamin | 55 s |
-| 3. Dos gráficas | f y A sincronizadas: área con signo, tangente de pendiente f(x) y valores numéricos | Ricardo | 95 s |
-| 4. Franja | Por qué A'(x) = f(x): la franja de ancho h y el cociente incremental que converge | Juan Pablo | 60 s |
-| 5. Cálculo | Cálculo exacto de A, su derivada, ceros de f y tabla de signos | Juan Pablo | 60 s |
-| 6. Contraejemplo | f = 0 no siempre da un extremo | Ricardo | 35 s |
-| 7. Cierre | Respuesta a la pregunta central, fuentes y uso de IA | Benjamin | 55 s |
+| 3. Dos gráficas | f y A sincronizadas: área con signo, tangente de pendiente f(x) y valores numéricos | Ricardo | 87 s |
+| 4. Franja | Por qué A'(x) = f(x): la franja de ancho h y el cociente incremental que converge | Juan Pablo | 55 s |
+| 5. Cálculo | Cálculo exacto de A, su derivada, ceros de f y tabla de signos | Juan Pablo | 52 s |
+| 6. Contraejemplo | f = 0 no siempre da un extremo | Ricardo | 24 s |
+| 7. Cierre | Respuesta a la pregunta central, fuentes y uso de IA | Benjamin | 40 s |
 
-Duración total: **5 min 38 s**.
+Duración total: **5 min 42 s**.
 
 ## Cómo generar el video
 
