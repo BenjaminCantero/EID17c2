@@ -4,12 +4,12 @@ from manim import BLUE_C, GREEN_C, ORANGE, PURPLE_B, RED_C, YELLOW, Text
 
 from ..dominio.signo import Signo, clasificar_signo
 
-COLOR_F = BLUE_C        # gráfica de f
-COLOR_A = ORANGE        # gráfica de A
-COLOR_POS = GREEN_C     # f > 0  →  A crece
-COLOR_NEG = RED_C       # f < 0  →  A decrece
-COLOR_CERO = YELLOW     # f = 0  →  tangente horizontal
-COLOR_X = PURPLE_B      # la variable x
+COLOR_F = BLUE_C
+COLOR_A = ORANGE
+COLOR_POS = GREEN_C     # f > 0
+COLOR_NEG = RED_C       # f < 0
+COLOR_CERO = YELLOW     # f = 0
+COLOR_X = PURPLE_B
 
 COLOR_POR_SIGNO = {
     Signo.POSITIVO: COLOR_POS,

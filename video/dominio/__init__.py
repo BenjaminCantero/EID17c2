@@ -1,1 +1,1 @@
-"""Capa de dominio: matemática pura, sin dependencias de manim."""
+"""Matemática pura, sin manim."""

@@ -1,4 +1,4 @@
-"""ESCENA 1 — Portada y pregunta central                     (~25 s)"""
+"""Escena 1: Portada y pregunta central."""
 
 from manim import *
 

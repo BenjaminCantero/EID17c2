@@ -1,4 +1,4 @@
-"""ESCENA 7 — Respuesta a la pregunta central, fuentes e IA   (~55 s)"""
+"""Escena 7: Respuesta a la pregunta central, fuentes e IA."""
 
 from manim import *
 
@@ -51,7 +51,6 @@ class Cierre(EscenaNarrada):
         self.wait(6)
 
     def mostrar_creditos(self):
-        """Fuentes y declaración de IA (rúbrica V7)."""
         t2 = texto("Fuentes y recursos", 36, weight=BOLD).to_edge(UP)
         lista = VGroup(*[texto("• " + s, 20) for s in FUENTES]).arrange(DOWN, aligned_edge=LEFT, buff=0.25)
         ia = VGroup(*[texto(s, 20, color=GRAY_A) for s in DECLARACION_IA]).arrange(DOWN, aligned_edge=LEFT, buff=0.12)

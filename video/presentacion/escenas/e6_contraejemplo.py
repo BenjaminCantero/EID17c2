@@ -1,4 +1,4 @@
-"""ESCENA 6 — Contraejemplo: f = 0 no siempre es extremo    (~35 s)"""
+"""Escena 6: Contraejemplo: f = 0 no siempre es extremo."""
 
 from manim import *
 

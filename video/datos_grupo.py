@@ -1,5 +1,4 @@
-"""Datos editables del grupo. Es el único archivo que hay que tocar para
-poner los nombres reales, cambiar quién narra o actualizar las fuentes."""
+"""Datos editables del grupo: nombres, narradores, audios y fuentes."""
 
 NOMBRES = [
     "Benjamin Cantero",
@@ -9,17 +8,26 @@ NOMBRES = [
 CURSO = "MAT1188 – Cálculo Intermedio"
 GRUPO = "Grupo 17"
 
-# Quién narra cada escena (índice dentro de NOMBRES, empieza en 0).
-# Todos deben aparecer al menos una vez (rúbrica V6b); lo comprueba
-# tests/test_dominio.py. Reparto pensado para ~2 min de voz por persona.
+# Índice en NOMBRES de quién narra cada escena. Todos deben narrar (rúbrica V6b).
 HABLA = {
-    "portada": 0,        # ~25 s
-    "definicion": 0,     # ~55 s
-    "dos_graficas": 1,   # ~95 s
-    "franja": 2,         # ~60 s
-    "calculo": 2,        # ~60 s
-    "contraejemplo": 1,  # ~35 s
-    "cierre": 0,         # ~55 s
+    "portada": 0,
+    "definicion": 0,
+    "dos_graficas": 1,
+    "franja": 2,
+    "calculo": 2,
+    "contraejemplo": 1,
+    "cierre": 0,
+}
+
+# Archivos dentro de audios/.
+AUDIOS = {
+    "portada": "Benja1.mp4",
+    "definicion": "Benja2.mp4",
+    "dos_graficas": "Ricardo1.ogg",
+    "franja": "Juan1.ogg",
+    "calculo": "Juan2.ogg",
+    "contraejemplo": "Ricardo2.ogg",
+    "cierre": "Benja3.mp4",
 }
 
 FUENTES = [
